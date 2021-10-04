@@ -13,7 +13,7 @@ const Header: React.FC<Props> = ({toggleTheme}) => {
 
   return (
     <Container>
-      Hello nav 
+      <div/>
       <Switch 
         onChange={toggleTheme}
         checked={title === 'dark'}
