@@ -1,9 +1,15 @@
 import styled from "styled-components";
+import { shade } from 'polished';
+
 
 export const Container = styled.div`
   display: flex;
   align-items: stretch;
   height: 100vh;
+
+  @media(max-width: 800px){
+    height: 92vh;
+  }
 
   aside {
     color: ${props => props.theme.colors.white};
@@ -33,6 +39,9 @@ export const Container = styled.div`
       color: ${props => props.theme.colors.lighter};
     }
 
+    @media(max-width: 800px){
+      display: none;
+    }
   }
 
   main {
@@ -65,8 +74,17 @@ export const Container = styled.div`
           height: 50px;
           border-radius: 8px;
           padding: 0 16px;
-          background: ${props => props.theme.colors.white};
-          border: 1px solid ${props => props.theme.colors.gray};
+          
+          border: 1px solid ${props => props.theme.colors.lighter};
+          color: ${props => props.theme.colors.text};
+
+          background-color: ${props => props.theme.title === 'light' ?
+  props.theme.colors.white : shade(.05, props.theme.colors.primary)
+          };
+
+          ::placeholder {
+            color: ${props => shade(0.2, props.theme.colors.lighter)};
+          }
         }
 
         button { 
@@ -102,6 +120,8 @@ export const Container = styled.div`
         }
       }
   }
+
+  
 `;
 
 export const ButtonCreateRoom = styled.button`
