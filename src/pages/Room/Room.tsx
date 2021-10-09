@@ -2,7 +2,7 @@ import { PageContent, PageRoom } from "./Room.style";
 import logoImg from '../../assets/images/logo.svg';
 import { Button, RoomCode } from '../../components/';
 import { useParams } from "react-router";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import { database } from "../../service/firebase";
 
@@ -10,11 +10,58 @@ type RoomParams = {
   id: string;
 }
 
+type FirebaseQuestions = Record<string, {
+  author: {
+    name: string,
+    avatar: string,
+  },
+  content: string,
+  isAnswered: boolean,
+  isHighlighted: boolean
+}>
+
+type Question = {
+  id: string,
+  author: {
+    name: string,
+    avatar: string,
+  },
+  content: string,
+  isAnswered: boolean,
+  isHighlighted: boolean
+}
+
 export function Room() {
   const { user } = useAuth();
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const [newQuestion, setNewQuestion] = useState('');
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [title, setTitle] = useState('');
+
+  useEffect(() => {
+
+    // TODO: refactor event listener to optimize performance 
+    const roomRef = database.ref(`rooms/${roomId}`);
+    roomRef.on('value', room => {
+      const databaseRoom = room.val();
+      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
+
+      const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
+          return {
+            id: key,
+            content: value.content,
+            author: value.author,
+            isHighlighted: value.isHighlighted,
+            isAnswered: value.isAnswered
+          }
+      })
+
+      setTitle(databaseRoom.title)
+      setQuestions(parsedQuestions);
+    })
+  }, [roomId])
+
 
   async function handleSendQuestion(event: FormEvent){
     event.preventDefault();
@@ -51,8 +98,8 @@ export function Room() {
       </header>
       <PageContent>
         <div className="room-title">
-          <h1>Sala React</h1>
-          <span>4 perguntas</span>
+          <h1>{title}</h1>
+          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
         <form onSubmit={handleSendQuestion}>
