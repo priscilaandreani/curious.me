@@ -59,6 +59,24 @@ export const PageContent = styled.main`
       align-items: center;
       margin-top: 16px;
 
+      .user-info{
+        display: flex;
+        align-items: center;
+
+        img{
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+        }
+
+        > span {
+          margin-left: 8px;
+          color: ${props => props.theme.colors.text};
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+
       span { 
         font-size: 14px;
         font-weight: 500;
