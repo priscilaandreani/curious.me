@@ -5,9 +5,8 @@ import { ButtonCreateRoom, Container } from './Home.style';
 import { Button } from '../../components/Button/Button';
 import { useHistory } from 'react-router';
 import { useAuth } from '../../hooks/useAuth';
-import { FormEvent, useContext, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { database } from '../../service/firebase';
-import { AuthContext } from '../../contexts/AuthContext';
 
 
 export function Home(){
