@@ -10,7 +10,7 @@ export function RoomCode({ code }: RoomCodeProps){
 
   const copyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(code);
-  },[])
+  }, [code])
 
   return(
     <RoomCodeStyled onClick={copyToClipboard}>
