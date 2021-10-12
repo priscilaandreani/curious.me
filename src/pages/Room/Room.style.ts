@@ -18,6 +18,11 @@ export const PageRoom = styled.div`
   }
 `
 
+export const QuestionList = styled.div`
+  margin-top: 32px;
+
+`;
+
 export const PageContent = styled.main`
   max-width: 800px;
   margin: 0 auto;
