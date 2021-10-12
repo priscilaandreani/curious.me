@@ -2,7 +2,7 @@ import { DefaultTheme, ThemeProvider } from "styled-components";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import usePersistedState from "./utils/hooks/usePersistedState";
-import { Home, NewRoom, Room } from './pages';
+import { AdminRoom, Home, NewRoom, Room } from './pages';
 import { Header } from './components';
 
 import GlobalStyle from './styles/global';
@@ -23,7 +23,8 @@ function App() {
             <AuthContextProvider>
               <Route exact path="/" component={Home} />
               <Route exact path="/rooms/new" component={NewRoom} />
-             <Route path="/rooms/:id" component={Room} />
+              <Route path="/rooms/:id" component={Room} />
+              <Route path="/admin/rooms/:id" component={AdminRoom} />
             </AuthContextProvider>
           </Switch>
       </BrowserRouter>

@@ -3,8 +3,14 @@ import { ButtonContainer } from "./Button.style";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function Button(props: ButtonProps){
+type OutlinedProps = {
+  isOutlined?: boolean
+}
+
+export function Button({isOutlined = false, ...props}: ButtonProps & OutlinedProps){
   return(
-    <ButtonContainer {...props}/>
+    <ButtonContainer 
+    className={`${isOutlined ? 'outlined' : ''}`}
+    {...props}/>
   )
 }

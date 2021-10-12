@@ -15,6 +15,15 @@ export const PageRoom = styled.div`
     > img {
       max-height: 45px;
     }
+
+    > div {
+      display: flex;
+
+      button {
+        height: 40px;
+        gap: 16px;
+      }
+    }
   }
 `
 

@@ -1,4 +1,4 @@
-import { PageContent, PageRoom, QuestionList } from "./Room.style";
+import { PageContent, PageRoom, QuestionList } from "../Room/Room.style";
 import logoImg from '../../assets/images/logo.svg';
 import { Button, Question, RoomCode } from '../../components/';
 import { useParams } from "react-router";
@@ -11,21 +11,21 @@ type RoomParams = {
   id: string;
 }
 
-export function Room() {
+export function AdminRoom() {
   const { user } = useAuth();
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { questions, title } = useRoom(roomId);
   const [newQuestion, setNewQuestion] = useState('');
 
-  async function handleSendQuestion(event: FormEvent){
+  async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
-    if(newQuestion.trim() === '') {
+    if (newQuestion.trim() === '') {
       return;
     }
 
     //TODO: add react-hot-toast to treat errors
-    if(!user){
+    if (!user) {
       throw new Error('You must be logged in')
     }
 
@@ -37,7 +37,7 @@ export function Room() {
       },
       isHighlighted: false,
       isAnswered: false,
-     }
+    }
 
     await database.ref(`rooms/${roomId}/questions`).push(question);
     setNewQuestion('');
@@ -48,7 +48,10 @@ export function Room() {
       <header>
         <div className="content">
           <img src={logoImg} alt="ask me" />
-          <RoomCode code={roomId}/>
+        <div>
+            <RoomCode code={roomId} />
+            <Button isOutlined>Encerrar sala</Button>
+        </div>
         </div>
       </header>
       <PageContent>
@@ -56,28 +59,6 @@ export function Room() {
           <h1>{title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
-
-        <form onSubmit={handleSendQuestion}>
-          <textarea 
-            placeholder="As perguntas é que mudam o mundo." 
-            onChange={event => setNewQuestion(event.target.value)}
-            value={newQuestion}
-            />
-
-            <div className="form-footer">
-              {user ? (
-                <div className="user-info">
-                  <img src={user.avatar} alt={user.name} />
-                  <span>{user.name}</span>
-                </div>
-              ) :
-              (
-                <span>
-                 Para enviar uma pergunta, <button>faça seu login</button>
-                </span>)}
-              <Button type="submit" disabled={!user}>Enviar</Button>
-            </div>
-        </form>
 
         <QuestionList>
           {questions.map(question => {
@@ -93,7 +74,7 @@ export function Room() {
       </PageContent>
     </PageRoom>
 
-    )
+  )
 };
 
 //TODO: learn about reconciliation (map and keys)

@@ -19,6 +19,12 @@ export const ButtonContainer = styled.button`
 
   transition: filter 0.2s;
 
+  &.outlined {
+    background-color: ${props => props.theme.colors.primary};
+    border: 1px solid ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.background};
+  }
+
   &:not(:disabled):hover{
     border: 1px solid ${props => props.theme.colors.primary};
     filter: brightness(0.95);
