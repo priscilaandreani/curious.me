@@ -1,19 +1,30 @@
+
 // eslint-disable-next-line
 export default {
   title: 'dark',
 
   colors: {
-    primary: '#2F2E48',
-    secundary: '#1A4CFD',
-    
-    regular: '#575562',
-    darker: '#010104',
-    lighter: '#A3B0BE',
-    gray: '#575562',
+    lightPrimary: '#fff',
+    primary: '#007AFF',
+    primaryHover: '#0062CC',
 
-    background: '#010104',
-    text: '#f9f9fc',
+    secundary: '#FFF2E0',
+    secundaryLight: '#FF9500',
 
-    white: '#f9f9fc'
+    danger: '#FFEBED',
+    dangerHover: '#FF5967',
+
+
+    regular: '#E5F9F6',
+    regularHover: '#24CCBB',
+
+    white: '#fff',
+
+    gray75: '#5f6979',
+    gray50: '#818891',
+    gray25: '#F5F6FA',
+
+    background: '#F5F6FA',
+    text: '#5f6979',
   }
 }

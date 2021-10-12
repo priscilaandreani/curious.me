@@ -12,6 +12,7 @@ export const Container = styled.div`
   }
 
   aside {
+    background-color: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.white};
 
     flex: 7;
@@ -21,6 +22,8 @@ export const Container = styled.div`
     justify-content: center;
 
     padding: 120px 80px;
+
+    border-radius: 0 32px 0 0;
 
     img {
       max-width: 320px;
@@ -36,7 +39,7 @@ export const Container = styled.div`
       font-size: 24px;
       line-height: 32px;
       margin-top: 16px;
-      color: ${props => props.theme.colors.lighter};
+      color: ${props => props.theme.colors.lightPrimary};
     }
 
     @media(max-width: 800px){
@@ -52,9 +55,8 @@ export const Container = styled.div`
     justify-content: center;
 
     padding: 0 32px;
-    border-radius: 32px 0 0 0;
 
-    background-color: ${props => props.theme.colors.primary};
+    background-color: ${props => props.theme.colors.background};
   }
 
   .main-content {
@@ -75,7 +77,7 @@ export const Container = styled.div`
           border-radius: 8px;
           padding: 0 16px;
           
-          border: 1px solid ${props => props.theme.colors.lighter};
+          border: 1px solid ${props => props.theme.colors.primary};
           color: ${props => props.theme.colors.text};
 
           background-color: ${props => props.theme.title === 'light' ?
@@ -83,7 +85,7 @@ export const Container = styled.div`
           };
 
           ::placeholder {
-            color: ${props => shade(0.2, props.theme.colors.lighter)};
+            color: ${props => shade(0.2, props.theme.colors.gray50)};
           }
         }
 
@@ -98,7 +100,7 @@ export const Container = styled.div`
 
       .separator { 
         font-size: 14px;
-        color: ${props => props.theme.colors.lighter};
+        color: ${props => props.theme.colors.primary};
 
         margin: 32px 0;
         display: flex;
@@ -108,14 +110,14 @@ export const Container = styled.div`
           content: '';
           flex: 1;
           height: 1px;
-          background-color: ${props => props.theme.colors.lighter};
+          background-color: ${props => props.theme.colors.primary};
           margin-right: 16px;
         }
         &::after {
           content: '';
           flex: 1;
           height: 1px;
-          background-color: ${props => props.theme.colors.lighter};
+          background-color: ${props => props.theme.colors.primary};
           margin-left: 16px;
         }
       }

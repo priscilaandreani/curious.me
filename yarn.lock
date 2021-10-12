@@ -8908,9 +8908,9 @@ postcss-color-functional-notation@^2.0.1:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
 
-postcss-color-gray@^5.0.0:
+postcss-color-gray50@^5.0.0:
   version "5.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-color-gray/-/postcss-color-gray-5.0.0.tgz#532a31eb909f8da898ceffe296fdc1f864be8547"
+  resolved "https://registry.yarnpkg.com/postcss-color-gray50/-/postcss-color-gray50-5.0.0.tgz#532a31eb909f8da898ceffe296fdc1f864be8547"
   integrity sha512-q6BuRnAGKM/ZRpfDascZlIZPjvwsRye7UDNalqVz3s7GDxMtqPY6+Q871liNxsonUw8oC61OG+PSaysYpl1bnw==
   dependencies:
     "@csstools/convert-colors" "^1.4.0"
@@ -9368,7 +9368,7 @@ postcss-preset-env@6.7.0:
     postcss "^7.0.17"
     postcss-attribute-case-insensitive "^4.0.1"
     postcss-color-functional-notation "^2.0.1"
-    postcss-color-gray "^5.0.0"
+    postcss-color-gray50 "^5.0.0"
     postcss-color-hex-alpha "^5.0.3"
     postcss-color-mod-function "^3.0.3"
     postcss-color-rebeccapurple "^4.0.1"

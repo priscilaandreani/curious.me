@@ -5,18 +5,27 @@ declare module 'styled-components' {
     title: string;
 
     colors: {
+      lightPrimary: string;
       primary: string;
-      secundary: string;
+      primaryHover: string;
 
-      regular: string,
-      darker: string,
-      lighter: string,
-      gray: string,
+      secundary: string;
+      secundaryLight: string;
+     
+      danger: string;
+      dangerHover: string;
+
+      regular: string;
+      regularHover: string;
 
       white: string;
 
       background: string;
       text: string;
+      
+      gray25: string;
+      gray50: string;
+      gray75: string;
     }
   }
 }

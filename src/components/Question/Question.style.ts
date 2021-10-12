@@ -4,14 +4,14 @@ export const QuestionStyled = styled.div`
   padding: 24px;
   border-radius: 8px;
   background-color: ${props => props.theme.colors.secundary};
-  box-shadow: 0 2px 12px ${props => props.theme.colors.gray};
+  box-shadow: 0 2px 12px ${props => props.theme.colors.gray50};
 
   & + & {
     margin-top: 8px;
   }
 
   p {
-    color: ${props => props.theme.colors.darker};
+    color: ${props => props.theme.colors.gray75};
   }
 
   footer {

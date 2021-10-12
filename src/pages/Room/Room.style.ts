@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PageRoom = styled.div`
   padding: 24px;
-  border-bottom: 1px solid ${props => props.theme.colors.lighter};
+  border-bottom: 1px solid ${props => props.theme.colors.primary};
 
   .content {
     display: flex;
