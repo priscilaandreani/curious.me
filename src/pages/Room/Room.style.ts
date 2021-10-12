@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PageRoom = styled.div`
   padding: 24px;
-  border-bottom: 1px solid ${props => props.theme.colors.primary};
+  border-bottom: 1px solid ${(props) => props.theme.colors.primary};
 
   .content {
     display: flex;
@@ -25,11 +25,10 @@ export const PageRoom = styled.div`
       }
     }
   }
-`
+`;
 
 export const QuestionList = styled.div`
   margin-top: 32px;
-
 `;
 
 export const PageContent = styled.main`
@@ -45,16 +44,15 @@ export const PageContent = styled.main`
       margin-left: 15px;
       padding: 8px 16px;
       border-radius: 50px;
-      background-color: ${props => props.theme.colors.primary};
-      
-      color: ${props => props.theme.colors.white};
+      background-color: ${(props) => props.theme.colors.dangerHover};
+
+      color: ${(props) => props.theme.colors.danger};
       font-weight: 500;
       font-size: 14px;
     }
-
   }
 
-  form { 
+  form {
     textarea {
       width: 100%;
       min-height: 130px;
@@ -63,8 +61,8 @@ export const PageContent = styled.main`
       padding: 14px;
       border: 0;
       border-radius: 8px;
-      background-color: ${props => props.theme.colors.white};
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      background-color: ${(props) => props.theme.colors.white};
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .form-footer {
@@ -73,11 +71,11 @@ export const PageContent = styled.main`
       align-items: center;
       margin-top: 16px;
 
-      .user-info{
+      .user-info {
         display: flex;
         align-items: center;
 
-        img{
+        img {
           width: 32px;
           height: 32px;
           border-radius: 50%;
@@ -85,29 +83,28 @@ export const PageContent = styled.main`
 
         > span {
           margin-left: 8px;
-          color: ${props => props.theme.colors.text};
+          color: ${(props) => props.theme.colors.text};
           font-weight: 500;
           font-size: 14px;
         }
       }
 
-      span { 
+      span {
         font-size: 14px;
         font-weight: 500;
-        color: ${props => props.theme.colors.text};
+        color: ${(props) => props.theme.colors.primary};
 
         button {
           background-color: transparent;
           border: 0;
 
-          color: ${props => props.theme.colors.primary};
+          color: ${(props) => props.theme.colors.primary};
           text-decoration: underline;
           font-size: 14px;
           font-weight: 500;
           cursor: pointer;
         }
       }
-
     }
   }
 `;

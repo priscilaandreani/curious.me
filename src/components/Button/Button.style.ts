@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ButtonContainer = styled.button`
   height: 50px;
@@ -6,28 +6,28 @@ export const ButtonContainer = styled.button`
   font-weight: 500;
   padding: 0 32px;
 
-  background-color: ${props => props.theme.title === 'light' ?
-    props.theme.colors.background :  props.theme.colors.background};
-  color:  ${props => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.white};
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   cursor: pointer;
-  border: 1px solid ${props => props.theme.colors.background};
+  border: 1px solid ${(props) => props.theme.colors.primary};
 
   transition: filter 0.2s;
 
   &.outlined {
-    background-color: ${props => props.theme.colors.primary};
-    border: 1px solid ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.background};
+    background-color: ${(props) => props.theme.colors.background};
+    border: 1px solid ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.primary};
   }
 
-  &:not(:disabled):hover{
-    border: 1px solid ${props => props.theme.colors.primary};
-    filter: brightness(0.95);
+  &:not(:disabled):hover {
+    border: 1px solid ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.primaryHover};
+    color: ${(props) => props.theme.colors.lightPrimary};
   }
 
   &:disabled {

@@ -34,17 +34,16 @@ export default {
     danger: '#FFEBED',
     dangerHover: '#FF5967',
 
-
     regular: '#E5F9F6',
     regularHover: '#24CCBB',
 
     white: '#fff',
-   
-    gray25: '#5f6979',
+
+    gray75: '#5f6979',
     gray50: '#818891',
-    gray75: '#F5F6FA',
+    gray25: '#F5F6FA',
 
     background: '#F5F6FA',
     text: '#5f6979',
-  }
-}
+  },
+};
