@@ -1,3 +1,4 @@
+import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const QuestionStyled = styled.div`
@@ -35,6 +36,39 @@ export const QuestionStyled = styled.div`
       margin-left: 8px;
       color: ${(props) => props.theme.colors.text};
       font-size: 14px;
+    }
+  }
+
+  button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    color: ${(props) => props.theme.colors.gray50};
+    transition: all 0.2s;
+
+    &.like-button {
+      display: flex;
+      align-items: flex-end;
+      color: ${(props) => props.theme.colors.gray50};
+      gap: 8px;
+
+      &.liked {
+        color: ${(props) => props.theme.colors.regularHover};
+
+        svg path {
+          stroke-width: 1;
+          stroke: ${(props) => props.theme.colors.regularHover};
+          fill: ${(props) => props.theme.colors.regularHover};
+        }
+      }
+    }
+
+    &:hover {
+      svg path {
+        stroke-width: 1;
+        stroke: ${(props) => props.theme.colors.regular};
+        fill: ${(props) => props.theme.colors.regularHover};
+      }
     }
   }
 `;
