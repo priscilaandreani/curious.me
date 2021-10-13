@@ -1,5 +1,5 @@
 import illustrationSvg from '../../assets/images/illustration.svg';
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo.svg';
 import { Container } from './NewRoom.style';
 import { Button } from '../../components/Button/Button';
 import { Link } from 'react-router-dom';
@@ -8,31 +8,28 @@ import { database } from '../../service/firebase';
 import { useAuth } from '../../hooks/useAuth';
 import { useHistory } from 'react-router-dom';
 
-
-
-export function NewRoom(){
+export function NewRoom() {
   const [newRoom, setNewRoom] = useState('');
   const history = useHistory();
-  const {user} = useAuth();
+  const { user } = useAuth();
 
-  async function handleCreateRoom(event: FormEvent){
+  async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
 
-    if(newRoom.trim() === ''){
+    if (newRoom.trim() === '') {
       return;
     }
 
     const roomRef = database.ref('rooms');
     const databaseRoom = await roomRef.push({
       title: newRoom,
-      authorId: user?.id
-
+      authorId: user?.id,
     });
 
-    history.push(`/rooms/${databaseRoom.key}`)
+    history.push(`/rooms/${databaseRoom.key}`);
   }
 
-  return(
+  return (
     <Container>
       <aside>
         <img src={illustrationSvg} alt="ilustração de troca de conhecimento" />
@@ -47,14 +44,16 @@ export function NewRoom(){
             <input
               type="text"
               placeholder="Digite o nome da sala"
-              onChange={(event)=> setNewRoom(event.target.value)}
+              onChange={(event) => setNewRoom(event.target.value)}
               value={newRoom}
             />
             <Button>Entrar na sala</Button>
           </form>
-          <p>Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link></p>
+          <p>
+            Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link>
+          </p>
         </div>
       </main>
     </Container>
-  )
+  );
 }

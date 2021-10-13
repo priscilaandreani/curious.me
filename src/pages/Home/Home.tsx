@@ -1,6 +1,6 @@
 import illustrationSvg from '../../assets/images/illustration.svg';
-import logo from '../../assets/images/logo.svg'
-import googleIconImg from '../../assets/images/google-icon.svg'
+import logo from '../../assets/images/logo.svg';
+import googleIconImg from '../../assets/images/google-icon.svg';
 import { ButtonCreateRoom, Container } from './Home.style';
 import { Button } from '../../components/Button/Button';
 import { useHistory } from 'react-router';
@@ -8,37 +8,42 @@ import { useAuth } from '../../hooks/useAuth';
 import { FormEvent, useState } from 'react';
 import { database } from '../../service/firebase';
 
-
-export function Home(){
-  const {signInWithGoogle, user} = useAuth();
+export function Home() {
+  const { signInWithGoogle, user } = useAuth();
   const history = useHistory();
   const [room, changeRoom] = useState('');
 
   async function handleCreateRoom() {
     if (!user) {
-      await signInWithGoogle()
+      await signInWithGoogle();
     }
     history.push('/rooms/new');
   }
 
-  async function handleJoinRoom(event: FormEvent){
+  async function handleJoinRoom(event: FormEvent) {
     event.preventDefault();
 
-    if(room.trim()=== ''){
+    if (room.trim() === '') {
       return;
     }
 
-    const roomRef = database.ref(`rooms/${room}`).get();
+    const roomRef = await database.ref(`rooms/${room}`).get();
 
-    if(!(await roomRef).exists()){
-      alert('Room does not exists.')
+    if (!roomRef.exists()) {
+      alert('Room does not exists.');
       return;
     }
 
-    history.push(`rooms/${room}`)
+    if (roomRef.val().endedAt) {
+      //TODO: change default alert to modal
+      alert('Room already closed.');
+      return;
+    }
+
+    history.push(`rooms/${room}`);
   }
 
-  return(
+  return (
     <Container>
       <aside>
         <img src={illustrationSvg} alt="ilustração de troca de conhecimento" />
@@ -57,7 +62,7 @@ export function Home(){
             <input
               type="text"
               placeholder="Digite o código da sala"
-              onChange={(event)=>changeRoom(event?.target.value)}
+              onChange={(event) => changeRoom(event?.target.value)}
               value={room}
             />
             <Button>Entrar na sala</Button>
@@ -65,5 +70,5 @@ export function Home(){
         </div>
       </main>
     </Container>
-  )
+  );
 }
