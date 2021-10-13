@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { database } from '../service/firebase';
+import { useAuth } from './useAuth';
 
 type FirebaseQuestions = Record<
   string,
@@ -11,6 +12,12 @@ type FirebaseQuestions = Record<
     content: string;
     isAnswered: boolean;
     isHighlighted: boolean;
+    likes: Record<
+      string,
+      {
+        authorId: string;
+      }
+    >;
   }
 >;
 
@@ -23,35 +30,54 @@ type QuestionType = {
   content: string;
   isAnswered: boolean;
   isHighlighted: boolean;
+  likeCount: number;
+  likeId: string | undefined;
 };
 
 export function useRoom(roomId: string) {
+  const { user } = useAuth();
   const [questions, setQuestions] = useState<QuestionType[]>([]);
   const [title, setTitle] = useState('');
 
   useEffect(() => {
     // TODO: refactor event listener to optimize performance
     const roomRef = database.ref(`rooms/${roomId}`);
-    roomRef.on('value', (room) => {
-      const databaseRoom = room.val();
-      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
 
-      const parsedQuestions = Object.entries(firebaseQuestions).map(
-        ([key, value]) => {
-          return {
-            id: key,
-            content: value.content,
-            author: value.author,
-            isHighlighted: value.isHighlighted,
-            isAnswered: value.isAnswered,
-          };
-        }
-      );
+    roomRef.on(
+      'value',
+      (room) => {
+        const databaseRoom = room.val();
+        const firebaseQuestions: FirebaseQuestions =
+          databaseRoom.questions ?? {};
 
-      setTitle(databaseRoom.title);
-      setQuestions(parsedQuestions);
-    });
-  }, [roomId]);
+        const parsedQuestions = Object.entries(firebaseQuestions).map(
+          ([key, value]) => {
+            return {
+              id: key,
+              content: value.content,
+              author: value.author,
+              isHighlighted: value.isHighlighted,
+              isAnswered: value.isAnswered,
+              likeCount: Object.values(value.likes ?? {}).length,
+              likeId: Object.entries(value.likes ?? {}).find(
+                ([key, like]) => like.authorId === user?.id
+              )?.[0],
+            };
+          }
+        );
+
+        setTitle(databaseRoom.title);
+        setQuestions(parsedQuestions);
+      },
+      (errorObject: FirebaseQuestions) => {
+        console.log('The read failed: ' + errorObject.name);
+      }
+    );
+
+    return () => {
+      roomRef.off('value');
+    };
+  }, [roomId, user?.id]);
 
   return { questions, title };
 }
