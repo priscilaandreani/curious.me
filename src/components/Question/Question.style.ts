@@ -1,11 +1,10 @@
-import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const QuestionStyled = styled.div`
   padding: 24px;
   border-radius: 8px;
   background-color: ${(props) => props.theme.colors.white};
-  box-shadow: 0px 2px 2px ${(props) => props.theme.colors.regular};
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
   & + & {
     margin-top: 8px;
@@ -39,6 +38,11 @@ export const QuestionStyled = styled.div`
     }
   }
 
+  div {
+    display: flex;
+    gap: 16px;
+  }
+
   button {
     border: 0;
     background: transparent;
@@ -57,18 +61,74 @@ export const QuestionStyled = styled.div`
 
         svg path {
           stroke-width: 1;
-          stroke: ${(props) => props.theme.colors.regularHover};
+          stroke: ${(props) => props.theme.colors.white};
+          fill: ${(props) => props.theme.colors.regularHover};
+        }
+      }
+
+      &:hover {
+        svg path {
+          stroke-width: 1;
+          stroke: ${(props) => props.theme.colors.white};
           fill: ${(props) => props.theme.colors.regularHover};
         }
       }
     }
 
-    &:hover {
+    &.trash-button:hover {
+      svg path {
+        stroke: ${(props) => props.theme.colors.dangerHover};
+      }
+    }
+    &.check-button:hover {
+      svg path,
+      circle {
+        stroke: ${(props) => props.theme.colors.regularHover};
+      }
+    }
+    &.highlight-button:hover {
+      svg path {
+        stroke: ${(props) => props.theme.colors.highlight};
+      }
+    }
+  }
+
+  &.highlighted {
+    background: ${(props) => props.theme.colors.highlightLight};
+
+    p {
+      color: ${(props) => props.theme.colors.highlight};
+    }
+
+    .like-button {
+      svg path {
+        stroke: ${(props) => props.theme.colors.highlight};
+      }
+
+      &.liked {
+        color: ${(props) => props.theme.colors.highlight};
+        svg path {
+          stroke-width: 1;
+          stroke: ${(props) => props.theme.colors.highlightLight};
+          fill: ${(props) => props.theme.colors.highlight};
+        }
+      }
+    }
+
+    &.like-button:hover {
       svg path {
         stroke-width: 1;
-        stroke: ${(props) => props.theme.colors.regular};
-        fill: ${(props) => props.theme.colors.regularHover};
+        stroke: ${(props) => props.theme.colors.highlightLight};
+        fill: ${(props) => props.theme.colors.highlight};
       }
+    }
+  }
+
+  &.answered {
+    background: ${(props) => props.theme.colors.regular};
+
+    p {
+      color: ${(props) => props.theme.colors.regularHover};
     }
   }
 `;
