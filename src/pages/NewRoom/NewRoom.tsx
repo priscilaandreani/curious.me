@@ -38,7 +38,7 @@ export function NewRoom() {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logo} alt="ask me" />
+          <img src={logo} alt="curious.me" />
           <h2>Criar uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
             <input

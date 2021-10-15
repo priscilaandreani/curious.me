@@ -7,8 +7,8 @@ export default {
     primary: '#16151A',
     primaryHover: '#1F1E25',
 
-    secundary: '#FF9500',
-    secundaryLight: '#FFF2E0',
+    secundary: '#0062CC',
+    secundaryLight: '#ADD5FF',
 
     danger: '#FF5967',
     dangerHover: '#FFEBED',

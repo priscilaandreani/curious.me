@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const PageRoom = styled.div`
   padding: 24px;
-  border-bottom: 1px solid ${(props) => props.theme.colors.primary};
 
   .content {
     display: flex;
@@ -19,6 +18,10 @@ export const PageRoom = styled.div`
       button {
         height: 40px;
       }
+    }
+
+    @media (max-width: 800px) {
+      width: 100%;
     }
   }
 `;
@@ -57,8 +60,12 @@ export const PageContent = styled.main`
       padding: 14px;
       border: 0;
       border-radius: 8px;
-      background-color: ${(props) => props.theme.colors.white};
+      background-color: ${(props) =>
+        props.theme.title === 'light'
+          ? props.theme.colors.white
+          : props.theme.colors.primaryHover};
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      color: ${(props) => props.theme.colors.text};
     }
 
     .form-footer {

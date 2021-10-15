@@ -1,8 +1,7 @@
 import { PageContent, PageRoom, QuestionList } from './Room.style';
-import logoImg from '../../assets/images/logo.svg';
 import { Button, Question, RoomCode } from '../../components/';
 import { useParams } from 'react-router';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../service/firebase';
 import { useRoom } from '../../hooks/useRoom';
@@ -17,6 +16,7 @@ export function Room() {
   const roomId = params.id;
   const { questions, title } = useRoom(roomId);
   const [newQuestion, setNewQuestion] = useState('');
+  const [smallScreen, setSmallScreen] = useState<Boolean>(false);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -58,6 +58,14 @@ export function Room() {
     }
   }
 
+  useEffect(() => {
+    if (window.screen.width > 800) {
+      setSmallScreen(false);
+    } else {
+      setSmallScreen(true);
+    }
+  }, []);
+
   return (
     <PageRoom id="page-room">
       <header>
@@ -69,7 +77,11 @@ export function Room() {
       <PageContent>
         <div className="room-title">
           <h1>{title}</h1>
-          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+          {questions.length > 0 && (
+            <span>
+              {questions.length} {!smallScreen && `pergunta(s)`}
+            </span>
+          )}
         </div>
 
         <form onSubmit={handleSendQuestion}>

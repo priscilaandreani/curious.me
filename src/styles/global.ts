@@ -6,11 +6,12 @@ export default createGlobalStyle`
     box-sizing: border-box;
     outline: 0;
     padding: 0;
+    font-family: 'Mulish', sans-serif;
   }
 
   body {
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
+    background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
 
     font-smooth: always;
     -webkit-font-smoothing: antialiased !important;

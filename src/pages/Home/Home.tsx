@@ -52,7 +52,7 @@ export function Home() {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logo} alt="ask me" />
+          <img src={logo} alt="curious.me" />
           <ButtonCreateRoom onClick={handleCreateRoom}>
             <img src={googleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google
