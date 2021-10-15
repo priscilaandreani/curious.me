@@ -45,26 +45,29 @@ export function useRoom(roomId: string) {
 
     roomRef.on('value', (room) => {
       const databaseRoom = room.val();
-      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
+      if (databaseRoom) {
+        const firebaseQuestions: FirebaseQuestions =
+          databaseRoom.questions ?? {};
 
-      const parsedQuestions = Object.entries(firebaseQuestions).map(
-        ([key, value]) => {
-          return {
-            id: key,
-            content: value.content,
-            author: value.author,
-            isHighlighted: value.isHighlighted,
-            isAnswered: value.isAnswered,
-            likeCount: Object.values(value.likes ?? {}).length,
-            likeId: Object.entries(value.likes ?? {}).find(
-              ([key, like]) => like.authorId === user?.id
-            )?.[0],
-          };
-        }
-      );
+        const parsedQuestions = Object.entries(firebaseQuestions).map(
+          ([key, value]) => {
+            return {
+              id: key,
+              content: value.content,
+              author: value.author,
+              isHighlighted: value.isHighlighted,
+              isAnswered: value.isAnswered,
+              likeCount: Object.values(value.likes ?? {}).length,
+              likeId: Object.entries(value.likes ?? {}).find(
+                ([key, like]) => like.authorId === user?.id
+              )?.[0],
+            };
+          }
+        );
 
-      setTitle(databaseRoom.title);
-      setQuestions(parsedQuestions);
+        setTitle(databaseRoom.title);
+        setQuestions(parsedQuestions);
+      }
     });
 
     return () => {
