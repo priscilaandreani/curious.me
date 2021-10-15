@@ -21,9 +21,13 @@ function App() {
       <BrowserRouter>
         <Switch>
           <AuthContextProvider>
-            <Route exact path="/" component={Home} />
-            <Route path="/rooms/new" component={NewRoom} />
-            <Route path="/rooms/:id" component={Room} />
+            <Switch>
+              <Route path="/rooms/new" component={NewRoom} />
+              <Route path="/rooms/:id" component={Room} />
+            </Switch>
+
+            <Route path="/" exact component={Home} />
+
             <Route path="/admin/rooms/:id" component={AdminRoom} />
           </AuthContextProvider>
         </Switch>
