@@ -37,6 +37,9 @@ export default {
     regular: '#E5F9F6',
     regularHover: '#24CCBB',
 
+    highlight: '#9D61FF',
+    highlightLight: '#E6D6FF',
+
     white: '#fff',
 
     gray75: '#5f6979',
