@@ -47,8 +47,11 @@ export function Home() {
     <Container>
       <aside>
         <img src={illustrationSvg} alt="ilustração de troca de conhecimento" />
-        <strong>Crie salas de Q&amp;A ao vivo</strong>
-        <p>Tire as dúvidas do seu público em tempo real</p>
+        <strong>
+          Não fique mais na dúvida.
+          <br /> Seja curioso!
+        </strong>
+        <p>Compartilhe conhecimento com salas de Q&amp;A</p>
       </aside>
       <main>
         <div className="main-content">

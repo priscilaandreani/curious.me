@@ -29,7 +29,7 @@ export const Container = styled.div`
     }
 
     strong {
-      font: 700 36px 'Poppings', sans-serif;
+      font: 700 36px 'Mulish', sans-serif;
       line-height: 42px;
       margin-top: 16px;
     }
@@ -39,6 +39,12 @@ export const Container = styled.div`
       line-height: 32px;
       margin-top: 16px;
       color: ${(props) => props.theme.colors.lightPrimary};
+
+      a,
+      a:active,
+      a:visited {
+        color: ${(props) => props.theme.colors.dangerHover};
+      }
     }
 
     @media (max-width: 800px) {

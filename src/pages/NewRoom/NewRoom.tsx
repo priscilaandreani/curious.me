@@ -1,12 +1,12 @@
 import illustrationSvg from '../../assets/images/illustration.svg';
 import logo from '../../assets/images/logo.svg';
-import { Container } from './NewRoom.style';
 import { Button } from '../../components/Button/Button';
 import { Link } from 'react-router-dom';
 import { FormEvent, useState } from 'react';
 import { database } from '../../service/firebase';
 import { useAuth } from '../../hooks/useAuth';
 import { useHistory } from 'react-router-dom';
+import { Container } from '../Home/Home.style';
 
 export function NewRoom() {
   const [newRoom, setNewRoom] = useState('');
@@ -33,8 +33,11 @@ export function NewRoom() {
     <Container>
       <aside>
         <img src={illustrationSvg} alt="ilustração de troca de conhecimento" />
-        <strong>Crie salas de Q&amp;A ao vivo</strong>
-        <p>Tire as dúvidas do seu público em tempo real</p>
+        <strong>
+          Não fique mais na dúvida.
+          <br /> Seja curioso!
+        </strong>
+        <p>Compartilhe conhecimento com salas de Q&amp;A</p>
       </aside>
       <main>
         <div className="main-content">
