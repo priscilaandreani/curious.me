@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.nav`
   width: 100%;
@@ -10,4 +10,8 @@ export const Container = styled.nav`
 
   display: flex;
   justify-content: space-between;
-`; 
+
+  img {
+    max-height: 45px;
+  }
+`;

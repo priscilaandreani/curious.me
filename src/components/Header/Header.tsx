@@ -1,20 +1,23 @@
-import { Container } from "./Header.style";
+import { Container } from './Header.style';
 import Switch from 'react-switch';
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { shade } from 'polished';
+import logoImg from '../../assets/images/logo.svg';
 
-interface Props { 
-  toggleTheme(): void 
+interface Props {
+  toggleTheme(): void;
 }
 
-const Header: React.FC<Props> = ({toggleTheme}) => {
+const Header: React.FC<Props> = ({ toggleTheme }) => {
   const { colors, title } = useContext(ThemeContext);
 
   return (
     <Container>
-      <div/>
-      <Switch 
+      <div>
+        <img src={logoImg} alt="curious.me" />
+      </div>
+      <Switch
         onChange={toggleTheme}
         checked={title === 'dark'}
         checkedIcon={false}
@@ -27,6 +30,6 @@ const Header: React.FC<Props> = ({toggleTheme}) => {
       />
     </Container>
   );
-}
+};
 
 export { Header };
