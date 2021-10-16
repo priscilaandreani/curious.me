@@ -17,6 +17,23 @@ Curious.me é uma plataforma de perguntas com objetivo de facilitar a interaçã
 
 Este é um projeto baseado na aplicação desenvolvida durante a **[Next Level Week Together](https://nextlevelweek.com/)** de junho de 2021.
 
+### Diferenciais
+
+[x] Arquitetura do projeto
+[/] Styeld Components
+[x] Regras do Firebase
+[x] Temas: light e dark!
+[x] Identidade visual
+
+[ ] Tratativa de permissões negadas
+[ ] Página 404
+[ ] Perguntas anônimas
+[ ] Lista de salas
+[ ] react-modal
+[ ] react-hot-toast
+[ ] Refatoração do listener de questões
+[ ] Deploy integrado
+
 ## 🔖 Layout
 
 Você pode visualizar o layout do projeto através do link abaixo:
