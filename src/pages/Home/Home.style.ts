@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
+import { tint, shade } from 'polished';
 
 export const Container = styled.div`
   display: flex;
@@ -39,12 +39,6 @@ export const Container = styled.div`
       line-height: 32px;
       margin-top: 16px;
       color: ${(props) => props.theme.colors.lightPrimary};
-
-      a,
-      a:active,
-      a:visited {
-        color: ${(props) => props.theme.colors.dangerHover};
-      }
     }
 
     @media (max-width: 800px) {
@@ -74,6 +68,10 @@ export const Container = styled.div`
 
     > img {
       align-self: center;
+    }
+
+    h2 {
+      margin-bottom: 36px;
     }
 
     form {
@@ -135,6 +133,26 @@ export const Container = styled.div`
             ? props.theme.colors.primaryHover
             : props.theme.colors.gray50};
         margin-left: 16px;
+      }
+    }
+
+    p {
+      font: 500 14px 'Mulish';
+      margin-top: 8px;
+
+      a,
+      a:active,
+      a:visited {
+        color: ${(props) =>
+          props.theme.title == 'light'
+            ? props.theme.colors.dangerHover
+            : props.theme.colors.danger};
+
+        &:hover {
+          color: ${(props) =>
+            props.theme.title == 'light'
+              ? tint(0.2, props.theme.colors.dangerHover)
+              : tint(0.2, props.theme.colors.danger)}
       }
     }
   }
