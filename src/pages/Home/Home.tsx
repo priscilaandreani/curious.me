@@ -2,13 +2,12 @@ import { FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../service/firebase';
+import { Button, ModalComponent } from '../../components';
+import { ButtonCreateRoom, Container } from './Home.style';
 import sadEmoji from '../../assets/images/sad.svg';
 import illustrationSvg from '../../assets/images/illustration.svg';
 import logo from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
-import { ButtonCreateRoom, Container } from './Home.style';
-import { Button } from '../../components/Button/Button';
-import { ModalComponent } from '../../components/Modal/Modal';
 
 export function Home() {
   const { signInWithGoogle, user } = useAuth();
@@ -43,7 +42,7 @@ export function Home() {
       return;
     }
 
-    if (user?.id == roomRef.val().authorId) {
+    if (user?.id === roomRef.val().authorId) {
       history.push(`admin/rooms/${room}`);
       return;
     }
@@ -57,20 +56,20 @@ export function Home() {
         isOpen={endedRoom}
         onRequestClose={() => setEndedRoom(false)}
       >
-        <div>
+        <section>
           <img src={sadEmoji} alt="carinha triste" />
           <h2>Essa sala já acabou</h2>
           <Button onClick={handleCreateRoom}>Criar nova sala</Button>
-        </div>
+        </section>
       </ModalComponent>
       <ModalComponent
         isOpen={roomDoesNotExist}
         onRequestClose={() => setRoomDoesNotExist(false)}
       >
-        <div>
+        <section>
           <img src={sadEmoji} alt="carinha triste" />
           <h2>Ops! Essa sala não existe.</h2>
-        </div>
+        </section>
       </ModalComponent>
       <Container id="home-container">
         <aside>

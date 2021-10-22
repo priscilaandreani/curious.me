@@ -25,14 +25,16 @@ Este é um projeto baseado na aplicação desenvolvida durante a **[Next Level W
 - [x] react-modal
 - [x] Temas: light e dark!
 - [x] Identidade visual
-- [/] Melhorias de usabilidade
+- [/] Melhorias de usabilidade:
 - [x] Responsividade
 
 - [ ] Favicon
 - [ ] Tratativa de permissões negadas
-- [ ] Página 404
-- [ ] Perguntas anônimas
-- [ ] Lista de salas
+- [ ] Página: 404
+- [ ] Página: "Minhas salas"
+- [ ] Componente: "Nenhuma pergunta por aqui"
+- [ ] Componente: "Compartilhar no whatsapp"
+- [ ] Permitir perguntas anônimas
 - [ ] react-hot-toast
 - [ ] Refatoração do listener de questões
 - [ ] Testes E2E
