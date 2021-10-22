@@ -23,8 +23,7 @@ export const ButtonContainer = styled.button`
   transition: filter 0.2s;
 
   &.outlined {
-    background-color: ${(props) =>
-      props.theme.title === 'dark' && props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.background};
     border: 1px solid
       ${(props) =>
         props.theme.title === 'light'

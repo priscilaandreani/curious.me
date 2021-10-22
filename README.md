@@ -19,20 +19,24 @@ Este é um projeto baseado na aplicação desenvolvida durante a **[Next Level W
 
 ### Diferenciais
 
-[x] Arquitetura do projeto
-[/] Styeld Components
-[x] Regras do Firebase
-[x] Temas: light e dark!
-[x] Identidade visual
+- [x] Arquitetura do projeto
+- [/] Styeld Components
+- [x] Regras do Firebase
+- [x] react-modal
+- [x] Temas: light e dark!
+- [x] Identidade visual
+- [/] Melhorias de usabilidade
+- [x] Responsividade
 
-[ ] Tratativa de permissões negadas
-[ ] Página 404
-[ ] Perguntas anônimas
-[ ] Lista de salas
-[ ] react-modal
-[ ] react-hot-toast
-[ ] Refatoração do listener de questões
-[ ] Deploy integrado
+- [ ] Favicon
+- [ ] Tratativa de permissões negadas
+- [ ] Página 404
+- [ ] Perguntas anônimas
+- [ ] Lista de salas
+- [ ] react-hot-toast
+- [ ] Refatoração do listener de questões
+- [ ] Testes E2E
+- [ ] Deploy integrado
 
 ## 🔖 Layout
 
