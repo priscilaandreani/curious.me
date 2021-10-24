@@ -1,6 +1,12 @@
 <p align="center">
-  <img alt="curious.me" src=".github/logo.svg" width="160px">
+  <img alt="curious.me" src="./src/assets/images/logo.svg" width="160px">
 </p>
+
+<div>
+    <img alt="theme light" src="./src/assets/doc/light.png"> 
+  <img alt="theme dark" src="./src/assets/doc/dark.png">
+
+</div>
 
 ## 🧪 Tecnologias
 
@@ -20,13 +26,18 @@ Este é um projeto baseado na aplicação desenvolvida durante a **[Next Level W
 ### Diferenciais
 
 - [x] Arquitetura do projeto
-- [/] Styeld Components
 - [x] Regras do Firebase
 - [x] react-modal
 - [x] Temas: light e dark!
 - [x] Identidade visual
-- [/] Melhorias de usabilidade:
 - [x] Responsividade
+
+</br>
+
+- [x] WIP: Styeld Components
+- [x] WIP: Melhorias de usabilidade:
+
+</br>
 
 - [ ] Favicon
 - [ ] Tratativa de permissões negadas
