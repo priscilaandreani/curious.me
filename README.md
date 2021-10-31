@@ -25,6 +25,7 @@ Este é um projeto baseado na aplicação desenvolvida durante a **[Next Level W
 - [x] Temas: light e dark!
 - [x] Identidade visual
 - [x] Responsividade
+- [x] Favicon
 
 </br>
 
@@ -33,7 +34,6 @@ Este é um projeto baseado na aplicação desenvolvida durante a **[Next Level W
 
 </br>
 
-- [ ] Favicon
 - [ ] Tratativa de permissões negadas
 - [ ] Página: 404
 - [ ] Página: "Minhas salas"
