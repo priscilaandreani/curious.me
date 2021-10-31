@@ -2,13 +2,7 @@
   <img alt="curious.me" src="./src/assets/images/logo.svg" width="160px">
 </p>
 
-<div>
-    <img alt="theme light" src="./src/assets/doc/light.png"> 
-  <img alt="theme dark" src="./src/assets/doc/dark.png">
-
-</div>
-
-## 🧪 Tecnologias
+## Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -17,7 +11,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Styled Components](https://styled-components.com/)
 
-## 💻 Projeto
+## Projeto
 
 Curious.me é uma plataforma de perguntas com objetivo de facilitar a interação entre palestrantes e audiência de forma organizada e democrática. Não fique com dúvidas. Seja curioso!
 
@@ -35,7 +29,7 @@ Este é um projeto baseado na aplicação desenvolvida durante a **[Next Level W
 </br>
 
 - [x] WIP: Styeld Components
-- [x] WIP: Melhorias de usabilidade:
+- [x] WIP: Melhorias de usabilidade
 
 </br>
 
@@ -51,7 +45,7 @@ Este é um projeto baseado na aplicação desenvolvida durante a **[Next Level W
 - [ ] Testes E2E
 - [ ] Deploy integrado
 
-## 🔖 Layout
+## WIP: Layout
 
 Você pode visualizar o layout do projeto através do link abaixo:
 
