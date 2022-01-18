@@ -50,3 +50,7 @@ Este é um projeto baseado na aplicação desenvolvida durante a **[Next Level W
 Você pode visualizar o layout do projeto através do link abaixo:
 
 - [Layout Web](https://www.figma.com/file/vCiIL9viu2A2ecMSmjF4Rn/curious.me?node-id=0%3A1)
+
+---
+
+Made with ❤️ by [@priscilaandreani](https://github.com/priscilaandreani). Feel free to contribute!
