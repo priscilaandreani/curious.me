@@ -1,4 +1,4 @@
-import illustrationSvg from '../../assets/images/illustration.svg';
+import girl from '../../assets/images/girl.png';
 import logo from '../../assets/images/logo.svg';
 import { Button } from '../../components/Button/Button';
 import { Link } from 'react-router-dom';
@@ -32,10 +32,14 @@ export function NewRoom() {
   return (
     <Container>
       <aside>
-        <img src={illustrationSvg} alt="ilustração de troca de conhecimento" />
+        <img
+          src={girl}
+          alt="Ilustração 3d de uma garota voando em posição de super heróina"
+          style={{ maxWidth: '550px' }}
+        />
         <strong>
-          Não fique mais na dúvida.
-          <br /> Seja curioso!
+          Faça todas as perguntas
+          <br /> Voe mais longe!
         </strong>
         <p>Compartilhe conhecimento com salas de Q&amp;A</p>
       </aside>

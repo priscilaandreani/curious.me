@@ -5,7 +5,7 @@ import { database } from '../../service/firebase';
 import { Button, ModalComponent } from '../../components';
 import { ButtonCreateRoom, Container } from './Home.style';
 import sadEmoji from '../../assets/images/sad.svg';
-import illustrationSvg from '../../assets/images/illustration.svg';
+import girlLaptop from '../../assets/images/girl-and-laptop.png';
 import logo from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
 
@@ -74,8 +74,8 @@ export function Home() {
       <Container id="home-container">
         <aside>
           <img
-            src={illustrationSvg}
-            alt="ilustração de troca de conhecimento"
+            src={girlLaptop}
+            alt="Ilustração 3d de uma garota sentada em uma poltrona com um laptop no colo, ao seu lado um foguete decolando"
           />
           <strong>
             Não fique mais na dúvida.

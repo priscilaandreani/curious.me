@@ -144,13 +144,13 @@ export const Container = styled.div`
       a:active,
       a:visited {
         color: ${(props) =>
-          props.theme.title == 'light'
+          props.theme.title === 'light'
             ? props.theme.colors.dangerHover
             : props.theme.colors.danger};
 
         &:hover {
           color: ${(props) =>
-            props.theme.title == 'light'
+            props.theme.title === 'light'
               ? tint(0.2, props.theme.colors.dangerHover)
               : tint(0.2, props.theme.colors.danger)}
       }
