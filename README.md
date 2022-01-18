@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="curious.me" src="./src/assets/images/logo.svg" width="160px">
+  <img alt="curious.me" src="./src/assets/images/logo.svg" width="250px">
 </h1>
 
 <p align="center">
