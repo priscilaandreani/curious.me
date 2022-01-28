@@ -1,12 +1,11 @@
-import girl from '../../assets/images/girl.png';
-import logo from '../../assets/images/logo.svg';
-import { Button } from '../../components/Button/Button';
-import { Link } from 'react-router-dom';
 import { FormEvent, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { database } from '../../service/firebase';
 import { useAuth } from '../../hooks/useAuth';
-import { useHistory } from 'react-router-dom';
+import { Button } from '../../components';
 import { Container } from '../Home/Home.style';
+import girl from '../../assets/images/girl.png';
+import logo from '../../assets/images/logo.svg';
 
 export function NewRoom() {
   const [newRoom, setNewRoom] = useState('');
