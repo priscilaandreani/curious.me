@@ -37,21 +37,21 @@ jobs:
         name: build
         path: build
       
-    deploy:
-      name: Deploy
-      needs: build
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - name: Download build
-          uses: actions/download-artifact@v2
-          with:
-            name: build
-            path: build
-          name: Deploy to Firebase
-          uses: w9jds/firebase-action@master
-          with:
-            args: deploy --only hosting
-          env: 
-            FIREBASE_TOKE: ${{ secrets.FIREBASE_TOKEN}}
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download build
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: build
+        name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env: 
+          FIREBASE_TOKE: ${{ secrets.FIREBASE_TOKEN}}
 
