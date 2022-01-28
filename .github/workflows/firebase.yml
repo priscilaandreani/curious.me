@@ -39,6 +39,9 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: Production
+      url: 'https://ask-me-a-question-9e4ea.web.app/'
     steps:
       - uses: actions/checkout@v2
       - name: Download Build
