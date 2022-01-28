@@ -39,9 +39,6 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: Production
-      url: 'https://ask-me-a-question-9e4ea.web.app/'
     steps:
       - uses: actions/checkout@v2
       - name: Download Build
@@ -54,4 +51,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.REACT_APP_API_KEY }}
